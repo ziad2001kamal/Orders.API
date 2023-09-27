@@ -1,0 +1,17 @@
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Data.deps.json
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Data.runtimeconfig.json
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Data.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Data.pdb
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.csproj.AssemblyReference.cache
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.AssemblyInfoInputs.cache
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.AssemblyInfo.cs
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\refint\Orders.Data.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.pdb
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.genruntimeconfig.cache
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\ref\Orders.Data.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Core.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\bin\Debug\net6.0\Orders.Core.pdb
+C:\Users\Ziadk\source\repos\Orders\Orders.Data\obj\Debug\net6.0\Orders.Data.csproj.CopyComplete
