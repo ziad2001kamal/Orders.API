@@ -8,9 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Constant\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

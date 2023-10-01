@@ -18,7 +18,7 @@ namespace Orders.Data.Models
         public float? DiscountValue { get; set; }
         public int ResturantId { get; set; }
         public int CategaoryId { get; set; }
-        public Categaory Categaory { get; set; }
+        public Category Categaory { get; set; }
         public List<OrderItem> Orders { get; set; }
 
     }

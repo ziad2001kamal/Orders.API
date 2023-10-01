@@ -9,10 +9,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Orders.API.Data;
+using Orders.Data.Models;
 using Orders.Infrastructure.AutoMapper;
+using Orders.Infrastructure.Extentions;
+using Orders.Infrastructure.Services.Categories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
 
 namespace Forms.Web
@@ -34,12 +38,13 @@ namespace Forms.Web
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<OrdersDbContext>();
-
+            services.AddRazorPages();
             //services.AddScoped<IFileService, FileService>();
             //services.AddScoped<IEmailService, EmailService>();
             services.AddAutoMapper(typeof(AutomapperProfile).Assembly);
+            services.RegisterServices();
             services.AddControllersWithViews();
         }
 

@@ -27,7 +27,7 @@ namespace Orders.API.Data
         }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Resturant> Resturants { get; set; }
-        public DbSet<Categaory> categaories { get; set; }
+        public DbSet<Category> categaories { get; set; }
         public DbSet<Meal> meals { get; set; }
         public DbSet<OrderItem> orderItems { get; set; }
 
