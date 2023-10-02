@@ -1,25 +1,13 @@
-
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Orders.API.Data;
 using Orders.Data.Models;
 using Orders.Infrastructure.AutoMapper;
 using Orders.Infrastructure.Extentions;
-using Orders.Infrastructure.Services.Categories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
 
-namespace Forms.Web
+
+namespace Orders.API
 {
     public class Startup
     {
@@ -41,8 +29,12 @@ namespace Forms.Web
             services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<OrdersDbContext>();
             services.AddRazorPages();
-            //services.AddScoped<IFileService, FileService>();
-            //services.AddScoped<IEmailService, EmailService>();
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order", Version = "v1" });
+                }
+
+                );
             services.AddAutoMapper(typeof(AutomapperProfile).Assembly);
             services.RegisterServices();
             services.AddControllersWithViews();
@@ -69,13 +61,17 @@ namespace Forms.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Orders");
+            });
+
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

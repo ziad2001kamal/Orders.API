@@ -5,8 +5,6 @@ C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.Assemb
 C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.csproj.CoreCompileInputs.cache
 C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.RazorAssemblyInfo.cache
-C:\Users\Ziadk\source\repos\Orders\Orders.API\obj\Debug\net6.0\Orders.API.RazorAssemblyInfo.cs
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\appsettings.json
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Orders.API.staticwebassets.runtime.json
@@ -108,3 +106,7 @@ C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\System.CodeDom.dl
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

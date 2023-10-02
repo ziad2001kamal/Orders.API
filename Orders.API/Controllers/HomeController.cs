@@ -10,7 +10,7 @@ namespace Orders.API.Controllers
 
         public IActionResult Index()
         {
-            return Ok("Welcome to API Project");
+            return Redirect("/swagger");
         }
 
 

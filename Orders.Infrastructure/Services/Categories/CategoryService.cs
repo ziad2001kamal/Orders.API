@@ -42,13 +42,13 @@ namespace Orders.Infrastructure.Services.Categories
 
         }
         public async Task<int> Update(UpdateCategoryDto dto)
-        {           
+        {
             var category = _db.categaories.SingleOrDefault(x => x.Id == dto.Id);
             if (category == null)
             {
                 //throw 
             }
-            var UpdateCategory= _mapper.Map(dto, category);
+            var UpdateCategory = _mapper.Map(dto, category);
             _db.categaories.Update(UpdateCategory);
             _db.SaveChanges();
             return category.Id;

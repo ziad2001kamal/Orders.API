@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Orders.Core.Dtos;
+using Orders.Core.ViewModels;
 using Orders.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,13 @@ namespace Orders.Infrastructure.AutoMapper
         public AutomapperProfile()
         {
 
-            CreateMap<Category, Category>();
+            CreateMap<Category, CategoryViewModel>();
             CreateMap<CreateCategoryDto, Category>();
             CreateMap<UpdateCategoryDto, Category>();
-            CreateMap<Category, UpdateCategoryDto>();
+
+            CreateMap<User, UserViewModel>();
+            CreateMap<CreateUserDto, User>();
+            CreateMap<UpdateUserDto, User>();
         }
     }
 }
