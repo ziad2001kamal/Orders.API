@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Orders.API.Data;
 using Orders.Core.Constant;
 using Orders.Core.Dtos;
 using Orders.Core.Exceptions;
+using Orders.Core.Options;
 using Orders.Core.ViewModels;
 using Orders.Data.Models;
 using System;
@@ -23,12 +25,14 @@ namespace Orders.Infrastructure.Services.Auth
         private readonly OrdersDbContext _db;
         private readonly UserManager<User> _userManager;
         private readonly IMapper _mapper;
+        private readonly JwtOptions _options;
 
-        public AuthService(OrdersDbContext db, UserManager<User> userManager, IMapper mapper)
+        public AuthService(OrdersDbContext db, UserManager<User> userManager, IMapper mapper, IOptions<JwtOptions> options)
         {
             _db = db;
             _userManager = userManager;
             _mapper = mapper;
+            _options = options.Value;
         }
         public async Task<LoginResponseViewModel> Login(LoginDto dto)
         {
@@ -63,11 +67,11 @@ namespace Orders.Infrastructure.Services.Auth
             {
                 claims.Add(new Claim(ClaimTypes.Role, string.Join(",", roles)));
             }
-            var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("wwdwfwfwqfggerwggrwgwrgqwer"));
+            var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecurityKey));
             var credentials = new SigningCredentials(Key, SecurityAlgorithms.HmacSha256);
             var expires = DateTime.Now.AddMonths(1);
-            var accessToken = new JwtSecurityToken("",
-                " ",
+            var accessToken = new JwtSecurityToken(_options.Issure,
+                _options.Issure,
                 claims,
                 expires: expires,
                 signingCredentials: credentials

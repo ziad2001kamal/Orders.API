@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Orders.Core.Options;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Orders.API
 {
@@ -38,11 +40,13 @@ namespace Orders.API
             services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order", Version = "v1" });
+
                 }
 
                 );
             services.AddAutoMapper(typeof(AutomapperProfile).Assembly);
             services.RegisterServices();
+            services.Configure<JwtOptions>(Configuration.GetSection("Jwt"));
             services.AddAuthentication(config =>
             {
                 config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -56,9 +60,9 @@ namespace Orders.API
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["jwtConfig:Issuer"],
-                    ValidAudience = Configuration["jwtConfig:Issuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("wwdwfwfwqfggerwggrwgwrgqwer"))
+                    ValidIssuer = Configuration["Jwt:Issure"],
+                    ValidAudience = Configuration["Jwt:Issure"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecurityKey"]))
 
                 };
             });

@@ -9,6 +9,7 @@
       "Orders.API/1.0.0": {
         "dependencies": {
           "Hangfire.Dashboard.Authorization": "3.0.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.UI": "6.0.20",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.21",
@@ -161,6 +162,17 @@
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.24.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "6.0.22.0",
+            "fileVersion": "6.0.2223.42415"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.20": {
@@ -1835,6 +1847,13 @@
       "sha512": "sha512-XlVJzJ5wPOYW+Y0J6Q/LVTEyfS4ssLXmt60T0SPP+D8abVhBTl+cgw2gDHlyKYIkcJg7btMVh383NDkMVqD/fg==",
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+iuPmRkxfJ2vHoXifWqPJK8jppS8+iH3m1B8VMdgVWiC2U4q3JPBXx/kb7348HfClMPG+OcHpTUtmJkfUByvgg==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.22",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.20": {
       "type": "package",

@@ -118,3 +118,4 @@ C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Hangfire.Core.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Hangfire.Dashboard.Authorization.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\System.ServiceModel.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Owin.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
