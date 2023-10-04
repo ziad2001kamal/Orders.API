@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Orders.Core.Exceptions
 {
-    public class InvalidUsernameOrPaaassword
+    public class InvalidUsernameOrPassword : Exception
     {
-
+        public InvalidUsernameOrPassword() : base("InvalidUsernameOrPassword") { }
     }
 }

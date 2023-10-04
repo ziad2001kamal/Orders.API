@@ -4,10 +4,10 @@ using Orders.Infrastructure.Services.Auth;
 
 namespace Orders.API.Controllers
 {
-    public class AuthServiceController : BaseController
+    public class AuthController : BaseController
     {
         private readonly IAuthService _authService;
-        public AuthServiceController(IAuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }

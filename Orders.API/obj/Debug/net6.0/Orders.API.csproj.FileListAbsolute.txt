@@ -114,3 +114,7 @@ C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.AspNetC
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Hangfire.Core.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Hangfire.Dashboard.Authorization.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\System.ServiceModel.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Owin.dll

@@ -5,7 +5,13 @@ using Orders.Data.Models;
 using Orders.Infrastructure.AutoMapper;
 using Orders.Infrastructure.Extentions;
 using Microsoft.OpenApi.Models;
-
+using Microsoft.AspNetCore.Mvc.Filters;
+using Hangfire;
+using static Org.BouncyCastle.Math.EC.ECCurve;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Orders.API
 {
@@ -37,9 +43,29 @@ namespace Orders.API
                 );
             services.AddAutoMapper(typeof(AutomapperProfile).Assembly);
             services.RegisterServices();
-            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-        }
+            services.AddAuthentication(config =>
+            {
+                config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(option =>
+            {
+                option.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["jwtConfig:Issuer"],
+                    ValidAudience = Configuration["jwtConfig:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("wwdwfwfwqfggerwggrwgwrgqwer"))
 
+                };
+            });
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -58,9 +84,16 @@ namespace Orders.API
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthentication();
             app.UseAuthorization();
+            //app.UseHangfireDashboard("/hangfire" ,  new DashboardOptions
+            //{
+            //    DashboardTitle = "Qatan SBS JOBS",
+            //    Authorization = new[]
+            //    {
+            //        new HangFireAuthorizationFilter()
+            //    }
+            //});
+            app.UseRequestLocalization();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
