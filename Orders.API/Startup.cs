@@ -27,7 +27,7 @@ namespace Orders.API
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<OrdersDbContext>();
+                    .AddEntityFrameworkStores<OrdersDbContext>();
             services.AddRazorPages();
             services.AddSwaggerGen(c =>
                 {
@@ -37,7 +37,7 @@ namespace Orders.API
                 );
             services.AddAutoMapper(typeof(AutomapperProfile).Assembly);
             services.RegisterServices();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

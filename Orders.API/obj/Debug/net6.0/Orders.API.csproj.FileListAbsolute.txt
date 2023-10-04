@@ -110,3 +110,7 @@ C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.OpenApi
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Ziadk\source\repos\Orders\Orders.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

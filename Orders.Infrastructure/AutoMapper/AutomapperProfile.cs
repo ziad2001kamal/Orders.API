@@ -22,6 +22,7 @@ namespace Orders.Infrastructure.AutoMapper
             CreateMap<User, UserViewModel>();
             CreateMap<CreateUserDto, User>();
             CreateMap<UpdateUserDto, User>();
+
         }
     }
 }

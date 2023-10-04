@@ -14,9 +14,10 @@ namespace Orders.Infrastructure.Services.Users
 {
     public class UserService : IUserService
     {
-        private readonly UserManager<User> _userManager;
         private readonly OrdersDbContext _db;
         private readonly IMapper _mapper;
+        private readonly UserManager<User> _userManager;
+
 
         public UserService(UserManager<User> userManager, OrdersDbContext db, IMapper mapper)
         {
