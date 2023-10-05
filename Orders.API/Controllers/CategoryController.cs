@@ -5,8 +5,7 @@ using Orders.Infrastructure.Services.Categories;
 
 namespace Orders.API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]/[action]")]
+
     public class CategoryController : BaseController
     {
         private readonly ICategoryService _categoryService;

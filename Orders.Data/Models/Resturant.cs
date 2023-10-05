@@ -15,8 +15,8 @@ namespace Orders.Data.Models
         public string LogUrl { get; set; }
         [Required]
         public string Phone { get; set; }
-        public decimal? Latitude { get; set; }
-        public decimal? Logittude { get; set; }
+        public double? Latitude { get; set; }
+        public double? Logittude { get; set; }
         public string Address { get; set; }
         public List<Meal> Meals { get; set; }
         public List<Order> Orders { get; set; }

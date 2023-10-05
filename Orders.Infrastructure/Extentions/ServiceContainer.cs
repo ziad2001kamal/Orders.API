@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Orders.Infrastructure.Services.Auth;
 using Orders.Infrastructure.Services.Categories;
+using Orders.Infrastructure.Services.Resturants;
 using Orders.Infrastructure.Services.Users;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Orders.Infrastructure.Extentions
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IResturantService, ResturantService>();
 
 
             return services;

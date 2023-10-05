@@ -40,7 +40,31 @@ namespace Orders.API
             services.AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order", Version = "v1" });
-
+                    c.AddSecurityDefinition("Bearer",
+                new OpenApiSecurityScheme
+                {
+                    Description = "Please enter into field the word 'Bearer' following by space and JWT",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Scheme = "Bearer"
+                });
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+                        },
+                        new List<string>()
+                    }
+                });
                 }
 
                 );
@@ -89,6 +113,8 @@ namespace Orders.API
 
             app.UseRouting();
             app.UseAuthorization();
+            app.UseAuthentication();
+
             //app.UseHangfireDashboard("/hangfire" ,  new DashboardOptions
             //{
             //    DashboardTitle = "Qatan SBS JOBS",
@@ -102,6 +128,7 @@ namespace Orders.API
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Orders");
+
             });
 
 
