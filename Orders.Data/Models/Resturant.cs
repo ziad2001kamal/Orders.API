@@ -19,7 +19,6 @@ namespace Orders.Data.Models
         public decimal? Logittude { get; set; }
         public string Address { get; set; }
         public List<Meal> Meals { get; set; }
-
         public List<Order> Orders { get; set; }
 
     }
