@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Orders.Core.Dtos;
+using Orders.Data.Models;
 using Orders.Infrastructure.Services.Categories;
 using Orders.Infrastructure.Services.Resturants;
 
@@ -20,11 +21,10 @@ namespace Orders.API.Controllers
             return Ok(GetResponse(resturants));
         }
         [HttpGet]
-        public IActionResult NearMe(string id)
+        public IActionResult NearMe()
         {
-            var resturant = _resturantService.NearMe(id);
-
-            return Ok(GetResponse(resturant));
+            var category = _resturantService.NearMe(userId);
+            return Ok(GetResponse(category));
 
         }
         [HttpPost]

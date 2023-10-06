@@ -86,7 +86,7 @@ namespace Orders.API
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["Jwt:Issure"],
                     ValidAudience = Configuration["Jwt:Issure"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SecurityKey"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("Jwt:SecurityKey").Value))
 
                 };
             });
@@ -112,8 +112,9 @@ namespace Orders.API
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+
+            app.UseAuthorization();
 
             //app.UseHangfireDashboard("/hangfire" ,  new DashboardOptions
             //{

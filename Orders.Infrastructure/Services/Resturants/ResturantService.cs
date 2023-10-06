@@ -48,7 +48,7 @@ namespace Orders.Infrastructure.Services.Resturants
             var userLocation = new Coordinates((double)user.Latitude, (double)user.Logittude);
             foreach (var resturent in resturents)
             {
-                var resturentLocation = new Coordinates((double)user.Latitude, (double)user.Logittude);
+                var resturentLocation = new Coordinates((double)resturent.Latitude, (double)resturent.Logittude);
                 var distanceKM = userLocation.DistanceTo(resturentLocation);
                 distance.Add(resturent.Id, distanceKM);
             }
